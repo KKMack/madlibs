@@ -4,21 +4,21 @@
 }
 
 .home {
-    position: relative;
-
-    background-color: #cfcfcf00;
     display: grid;
-    justify-items: center;
-    // align-items: center;
+    position: relative;
+    background-color: #cfcfcf00;
     grid-template-rows: [header-s] 218 [header-e card-s] minmax(736px, 994px) [card-e];
+    justify-items: center;
 }
 
 .header {
     align-self: center;
-
+    font-family: 'Montserrat';
+    color: white;
+    text-align: center;
     &__skew {
-        -webkit-clip-path: polygon(0 50%, 100% 25%, 100% 30%, 0 55%);
-        clip-path: polygon(0 50%, 100% 25%, 100% 30%, 0 55%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 24%, 0 49%);
+        clip-path: polygon(0 0, 100% 0, 100% 24%, 0 49%);
         z-index: -10;
         top: 0;
         left: 0;
@@ -28,10 +28,24 @@
         position: absolute;
     }
 
+    h1 {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 44px;
+    }
+
+    p {
+        color: rgba(225, 225, 225, 0.5);
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 19px;
+        width: 403px;
+    }
+
     &__border {
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
         clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
-        z-index: -10;
+        z-index: -11;
         top: 0;
         left: 0;
         background-color: #00cb79;
@@ -49,27 +63,27 @@
 
     display: grid;
     grid-template-rows: 1fr 50px;
-
+    background-color: white;
+    
     &__inputs {
-        background-color: skyblue;
         display: grid;
-        grid-template-rows: repeat 4 1fr;
-        grid-template-columns: repeat 4 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
 
-        justify-items: center;
-        align-items: center;
+        justify-content: center;
+        align-content: center;
     }
 }
 
 .input {
     display: grid;
-    // grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: [number-s] 26px [number-e input-s] 1fr [input-e];
 
     &__title {
         grid-column: input-s/input-e;
     }
-    input {
+    &__input {
         grid-column: input-s/input-e;
     }
     &__number {
