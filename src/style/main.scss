@@ -1,6 +1,21 @@
 @mixin button {
-    -webkit-clip-path: polygon(50% 16%, 100% 100%, 0 0, 100% 0, 0 100%, 50% 16%, 100% 0, 0 33%, 100% 100%, 0 100%, 100% 33%, 0 0);
-    clip-path: polygon(50% 16%, 100% 100%, 0 0, 100% 0, 0 100%, 50% 16%, 100% 0, 0 33%, 100% 100%, 0 100%, 100% 33%, 0 0);
+    height: 50px;
+    width: 300px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+
+    color: white;
+    font-family: "Montserrat";
+    font-size: 22px;
+    text-align: center;
+}
+
+.gray {
+    background: #b3b3b3;
+}
+
+.green {
+    background: #00cb79
 }
 
 .home {
@@ -55,7 +70,8 @@
 }
 
 .card {
-    height: 736px;
+    min-height: 736px;
+    max-height: 994px;
     width: 1240px;
     box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
     border-radius: 7px;
@@ -66,18 +82,78 @@
 
     &__inputs {
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 27px 27px 27px 27px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        grid-row-gap: 120px;
+        margin-top: 66px;
+        margin-left: 83px;
+        margin-right: 83px;
 
         justify-content: center;
         align-content: center;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    button {
+        justify-self: center;
+        
+    }
+
+    &__generate {
+        background-color: #00cb79;
+        // transform: translateY(-200px);
+        @include button;
+
+    }
+    &__clear {
+        background-color: #45b0e5;
+        justify-self: center;
+        transform: translateY(50%);
+        margin-top: 20px;
+        @include button;
+    }
+
+    &__content {
+        width: 1100px;
+        height: 297px;
+        background-color: #f2f2f2;
+
+        justify-self: center;
+        margin-bottom: 84px;
+        margin-top: 20px;
+
+        font-family: 'Montserrat';
+
+        &__label {
+            height: 18px;
+            width: 18px;
+            line-height: 22px;
+            background-color: black;
+            border-radius: 50%;
+            font-size: 14px;
+            text-align: center;
+            color: white;
+            display: inline-block;
+            margin: 4px;
+        }
+
+        p {
+            padding: 50px 47px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 29px;
+        }
     }
 }
 
 .input {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: [number-s] 26px [number-e input-s] 1fr [input-e];
+    grid-template-columns: [number-s] 28px [number-e input-s] 1fr [input-e];
     font-family: 'Montserrat';
     text-align: center;
 
@@ -94,15 +170,26 @@
         border: none;
         font-size: 15px;
         text-align: center;
+        height: 28px;
+        padding: 4px 0;
+        border-bottom: 1px solid #b3b3b3;
+        transition: all .3s ease;
+
+        &:focus {
+            outline: none;
+            border-bottom: 1.5px solid #00cbcb;
+        }
     }
     &__number {
         grid-column: number-s/number-e;
 
-        background-color: #00cb79;
         color: white;
         font-size: 20px;
-        padding-top: 1px;
+        padding-top: 3px;
+        height: 28px;
+        width: 28px;
 
         border-radius: 50%;
     }
 }
+

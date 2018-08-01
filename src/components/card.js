@@ -5,7 +5,7 @@ import Content from "./content"
 
 const INITIAL_STATE = {
                 color: '',
-                pluralnoun: '',
+                pluralNoun: '',
                 adjectiveOne: '',
                 celebOne: '',
                 adjectiveTwo: '',
@@ -54,7 +54,7 @@ class Card extends Component {
 
         const inputData = [
             {title: 'Color', state: this.state.color, name: 'color'},
-            {title: 'Plural Noun', state: this.state.pluralnoun, name: 'pluralnoun'},
+            {title: 'Plural Noun', state: this.state.pluralNoun, name: 'pluralNoun'},
             {title: 'Adjective', state: this.state.adjectiveOne, name: 'adjectiveOne'},
             {title: 'Celebrity', state: this.state.celebOne, name: 'celebOne'},
 
@@ -83,7 +83,7 @@ class Card extends Component {
                 })
             }
             </div>
-            <button type="submit">{this.state.contentVisible ? "Clear Madlib" : "Show Madlib"}</button>
+            <button className={`card__${!this.state.contentVisible ? 'generate' : 'clear'}`} type="submit">{this.state.contentVisible ? "Clear Madlib" : "Show Madlib"}</button>
             {
                 this.state.contentVisible ? <Content data={this.state}/> : ''
             }
